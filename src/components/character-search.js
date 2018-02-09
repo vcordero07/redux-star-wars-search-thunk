@@ -19,13 +19,21 @@ export class CharacterSearch extends React.Component {
 
     return <ul className="character-search-results">{characters}</ul>;
   }
+  search(e) {
+    e.preventDefault();
+    if (this.input.value.trim() === "") {
+      return;
+    }
+
+    this.props.dispatch(searchCharacters(this.input.value));
+  }
 
   render() {
     return (
       <div className="character-search">
         {/* When this form is submitted you should submit the
                     searchCharacters action */}
-        <form>
+        <form onSubmit={e => this.search(e)}>
           <input type="search" ref={input => (this.input = input)} />
           <button>Search</button>
         </form>
