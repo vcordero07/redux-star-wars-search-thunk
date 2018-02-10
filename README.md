@@ -1,1 +1,1 @@
-## Redux Star Wars search drill thunk
+## Redux Star Wars search thunk
