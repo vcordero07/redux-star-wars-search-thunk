@@ -28,8 +28,8 @@ export function characterReducer(state = initialState, action) {
   } else if (action.type === SEARCH_CHARACTERS_ERROR) {
     return {
       ...state,
-      error: action.error,
-      loading: false
+      loading: false,
+      error: action.error
     };
   }
   return state;
